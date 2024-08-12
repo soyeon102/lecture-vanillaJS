@@ -49,6 +49,13 @@ export default class SearchFormView extends View {
     // 요구사항 검색폼4 구현시 검색 결과를 삭제하는 것은 폼뷰의 역할이 아니므로
     // @reset 커스텀 이벤트만 발생시킨다
     this.emit("@reset");
-    this.showResetButton(false);
+  }
+  // 사용자 입력이 아닌 검색어 클릭시 input에 값을 넣어주는 역할
+  show(value = "") {
+    this.inputElement.value = value;
+    this.showResetButton(this.inputElement.value.length > 0);
+
+    // 부모 클래스 View의 show 메서드를 호출해 화면에 노출한다
+    super.show();
   }
 }

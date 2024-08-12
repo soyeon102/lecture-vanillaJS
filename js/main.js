@@ -3,6 +3,9 @@ import Store from "./Store.js";
 import storage from "./storage.js";
 import SearchFormView from "./views/SearchFormView.js";
 import SearchResultView from "./views/SearchResultView.js";
+import TabView from "./views/TabView.js";
+import KeywordListView from "./views/KeywordListView.js";
+import HistoryListView from "./views/HistoryListView.js";
 
 // 돔이 로딩되는 시점에 메인 함수를 호출한다
 document.addEventListener("DOMContentLoaded", main);
@@ -15,6 +18,9 @@ function main() {
   const view = {
     searchFormView: new SearchFormView(),
     searchResultView: new SearchResultView(),
+    tabView: new TabView(),
+    keywordListView: new KeywordListView(),
+    historyListView: new HistoryListView(),
   };
 
   // 스토어와 뷰를 컨트롤러에 전달
